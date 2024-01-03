@@ -1,0 +1,242 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Form styles */
+form {
+ 
+  justify-content: center;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 30%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button:hover {
+  font-style: bold;
+}
+
+textarea.description{
+  width: 400px;
+  height: 80px;
+
+
+
+}
+
+button.Enter-button {
+  position: absolute;
+  margin-top: 60px;
+  margin-right: 200px;
+  padding: 4px 8px;
+  font-size: 40px;
+  border: none;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+button.undo-button {
+  position: absolute;
+  margin-right: 200px;
+  margin-left:100px;
+  padding: 4px 8px;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #979697;
+  color: white;
+  cursor: pointer;
+}
+
+button.add-button {
+  
+  margin-left: 1200px;
+  padding: 4px 8px;
+  font-size: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: #a73083;
+  color: white;
+  cursor: pointer;
+}
+
+button.edit-button {
+  padding: 0px 18px;
+  font-size: 15px;
+  
+  border: none;
+  margin-right: 100px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: grey;
+  cursor: pointer;
+}
+
+
+/* CSS */
+button.check-off-btn {
+  /* Your button styles here */
+  padding: 4px 8px;
+  margin-left: 1px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  margin-right: 7px;
+  border-radius: 5px;
+}
+
+
+
+/* Task list styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list-group-item {
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+}
+
+.color-strip-grey{
+  height: 20px; /* Set the height of the strip */
+  background-color: grey; /* Set the background color */
+  
+  border: 0;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  /* Additional styling */
+}
+
+.color-strip-green{
+  height: 20px; /* Set the height of the strip */
+  background-color: green; /* Set the background color */
+  margin: 0;
+  border: 0;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  /* Additional styling */
+}
+
+.color-strip-blue{
+  height: 20px; /* Set the height of the strip */
+  background-color: blue; /* Set the background color */
+  margin: 0;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  /* Additional styling */
+}
+
+.color-strip-orange{
+  height: 20px; /* Set the height of the strip */
+  background-color: orange; /* Set the background color */
+  margin: 0;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  /* Additional styling */
+}
+
+.color-strip-red{
+  height: 20px; /* Set the height of the strip */
+  background-color: red; /* Set the background color */
+  margin: 0;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  /* Additional styling */
+}
+
+
+
+.task-list span,
+.task-list li span {
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 25px;
+    margin-right: 5px;
+}
+
+
+.task-list li h3{
+  margin-left:0px;
+}
+.task-list li p {
+  margin: 0
+}
+
+.flex-container {
+  display: flex; /* Create a flex container */
+  
+  flex:1;
+  justify-content: space-between; /* Arrange items with space between */
+  align-items: flex-end; /* Align items vertically in the center */
+  
+  padding: 0px;
+  border-radius: 15px;
+}
+.flex-item{
+  text-align: left;
+  
+}
+
+.flex-bottom {
+  display: flex; /* Create a flex container */
+  
+  flex:2;
+  justify-content: space-between; /* Arrange items with space between */
+  align-items: flex-end; /* Align items vertically in the center */
+  
+  padding: 0px;
+  border-radius: 15px;
+}
+
+
+.flex-inline {
+
+  display: flex; /* Create a flex container */
+  flex:1;
+  justify-content: space-between; /* Arrange items with space between */
+  align-items: flex-end; /* Align items vertically in the center */
+  margin:  0;
+  
+  padding: 0px;
+  border-radius: 15px;
+}
+
+

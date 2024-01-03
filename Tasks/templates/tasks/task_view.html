@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 40px;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task-list li {
+            position: relative;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            padding: 0px;
+            border-radius: 20px;
+            border-color: black;
+            border-style: solid;
+            border-width:4px;
+        }
+        
+    </style>
+
+<form action="{% url 'undo_task' %}" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="CompletedTasksStack" value="{{ completed_tasks_stack }}" />
+  <button class="undo-button">Undo</button>
+</form>
+
+<form action="{% url 'add_task' %}" method="GET">
+  {% csrf_token %}
+  <button class="add-button">Add Task</button>
+</form>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4" style= "font-family:Georgia">Task List</h1>
+        <ul class="task-list">
+           
+            {% for task in tasks %}
+                {% with urgency_color=task.get_urgency_color %}
+                <li>
+
+                    {% if task.urgency == 0 %}
+                    <div class="color-strip-grey"></div>
+                    {% elif task.urgency == 1 %}
+                    <div class="color-strip-green"></div>
+                        
+                    {% elif task.urgency == 2 %}
+                    <div class="color-strip-blue"></div>
+
+
+                    {% elif task.urgency == 3 %}
+                    <div class="color-strip-orange"></div>
+
+                    {% else %}
+                    <div class="color-strip-red"></div>
+                    {% endif %}
+
+
+                    <div class="flex-container">
+                      <div class="flex-item">
+                          <h3><span style="font-family: 'Cambria', sans-serif; font-weight: bold">{{ task.title }}</span></h3>
+                          
+                      </div>
+                      <div class = "flex-item">
+                        <span>by: {{ task.due_date }}</span>
+                      </div>
+
+                    </div>
+
+                    <div class="flex-item">
+                      <p><span style="font-family: 'Cambria', sans-serif;">{{ task.description }}</span></p>
+                  </div>
+
+                    <div class="flex-inline">
+                      <div class="flex-item-edit">
+
+                      <form action="{% url 'edit_task' task.id %}" method="GET">
+                        {% csrf_token %}
+                        <button class= "edit-button">Edit</button>
+                    </form>
+                  </div>
+                      
+
+
+                      <div class="flex-item-check">
+                          
+                        <form action="{% url 'check_task' task.id %}" method="POST">
+                          {% csrf_token %}
+                          <button class= "check-off-btn">Completed Task</button>
+                      </form>
+                      </div>
+                    </div>
+                  
+
+                </li>
+                {% endwith %}
+            {% endfor %}
+        </ul>
+    </div>
+ 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
